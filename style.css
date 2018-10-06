@@ -1,0 +1,761 @@
+/*
+Theme Name: Newsy
+Theme URI: GITHUP
+Author: Khaled Fathy
+Author URI: https://www.linkedin.com/in/kfathy194/
+Description: Newsy brings your site to life with immersive featured images and subtle animations. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: newsy
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/*
+ * Table of Style Blocks
+ *
+ * 1.0 - Normalize
+ * 2.0 - Elements
+ * 3.0 - Typography
+ * 4.0 - Navigation
+ *   4.1 - Links
+ *   4.2 - Menus
+ * 5.0 - Flex Display
+ *   5.1 - Flow
+ *   5.2 - Row
+ *   5.3 - Column
+ *   5.4 - Aligns
+ * 6.0 - Content
+ *   6.1 - Ads
+ *   6.2 - News Item
+ *   6.3 - Latest News
+ *   6.4 - News Current Geo
+ *   6.5 - Featured News
+ *   6.6 - Top Stories
+ * 7.0 - Animations
+ * 7.1 - Media Queries
+ */
+
+
+/*
+ * 1.0 - Normalize
+ */
+
+html {
+  font-family: 'LatoRegular', 'Courier New', Courier, monospace;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary,
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+
+figure,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+select {
+  text-transform: none;
+}
+
+button {
+  overflow: visible;
+  outline: 0;
+  border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+  opacity: .5;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+
+/*
+ * 2.0 - Elements
+ */
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+
+/*
+  * 3.0 - Typography
+*/
+
+body,
+button,
+input,
+select,
+textarea {
+  color: #231f20;
+  font-family: 'LatoRegular', 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin: 0 0 6px 0;
+  color: #d73e44;
+  text-transform: uppercase;
+}
+
+/*
+ * 4.0 - Navigation
+ */
+
+/*
+ * 4.1 - Links
+ */
+
+a {
+  color: #231f20;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #9E9E9E;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/*
+* 4.2 - Menus 
+*/
+.main-header {
+  background-color: #231f20;
+  margin-bottom: 30px;
+}
+
+.main-header .primary-menu {
+  margin: 0;
+  padding: 0;
+}
+
+.main-header .primary-menu li {
+  margin: 0;
+  list-style: none;
+}
+
+.main-header .primary-menu li a {
+  margin: 0 5px;
+  padding: 10px 14px;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.main-header .primary-menu li a:hover,
+.main-header .primary-menu li.current-menu-item a {
+  background-color: #0274bb;
+}
+
+.main-header .search-form {
+  background-color: #ffffff;
+  width: 300px;
+  margin-right: 15px;
+  margin-left: auto;
+  border-radius: 4px;
+}
+
+.main-header .search-form .search-submit {
+  width: 30px;
+  background-color: transparent;
+}
+
+.main-header .search-form .search-submit img {
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.main-header .search-form .search-field {
+  color: #231f20;
+  padding: 0.3rem;
+  border: 0;
+  border-radius: 4px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.main-header .search-form .search-field:focus {
+  border: 0;
+  outline: 0;
+}
+
+/* 
+* 5.0 - Flex Display
+*/
+.main-header .site-header-menu,
+.main-header .menu-main-container,
+.main-header .primary-menu,
+.main-header .primary-menu li,
+.main-header .search-form,
+.main-header .search-form *,
+.slider__current-geo .slick-list,
+.slider__current-geo .slick-track,
+.slider__current-geo .slider-container,
+.featured-news * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* 
+* 5.0 - Flex Display-END
+*/
+/*
+* 5.1 - Flow
+*/
+.featured-news,
+.main-header,
+.latest-news,
+.featured-news .list-items,
+.featured-news .top-stories-container ol * {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.news-item figcaption,
+.slider__current-geo,
+.featured-news .top-stories-container,
+.featured-news .top-stories-container *,
+.featured-news .featured-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+/*
+* 5.1 - Flow-END
+*/
+/*
+* 5.2 - Row
+*/
+.main-header .site-header-menu,
+.main-header .menu-main-container,
+.main-header .primary-menu {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+/*
+* 5.2 - Row-END
+*/
+
+/*
+* 5.3 - Column
+*/
+
+main,
+.app-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/*
+* 5.3 - Column-END
+*/
+/*
+*5.4 - Aligns
+*/
+.main-header .primary-menu li,
+.main-header,
+.slider__current-geo .slick-list,
+.slider__current-geo .slider-container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.slider__current-geo .slick-list {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.main-header .search-form {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.main-header .search-form .search-submit {
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+/*
+*5.4 - Aligns-END
+*/
+/* 
+* 6.0 - Content 
+*/
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/*
+* 6.1 - Ads 
+*/
+.ads__top-banner {
+  background-color: gray;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 200px;
+}
+
+.ads__top-banner p {
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+/*
+* 6.1 - Ads-END
+*/
+/*
+* 6.2 - News Item
+*/
+.news-item {
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.news-item img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.news-item figcaption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(0%, rgba(0, 0, 0, 100)), color-stop(35%, rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.1)));
+  background: -webkit-linear-gradient(0, rgba(0, 0, 0, 100) 0%, rgba(0, 0, 0, 0.7) 35%, rgba(0, 0, 0, 0.1) 100%);
+  background: -o-linear-gradient(0, rgba(0, 0, 0, 100) 0%, rgba(0, 0, 0, 0.7) 35%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(0, rgba(0, 0, 0, 100) 0%, rgba(0, 0, 0, 0.7) 35%, rgba(0, 0, 0, 0.1) 100%);
+  padding: 10px 20px;
+}
+
+.news-item .news-item__tag {
+  background-color: #0072bb;
+  color: #ffffff;
+  padding: 4px 16px;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.news-item .news-item__title {
+  font-family: 'LatoBold', 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.news-item .news-item__title:hover {
+  color: #9E9E9E;
+}
+
+/*
+* 6.2 - News END
+*/
+/*
+* 6.3 - Latest News
+*/
+.latest-news {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #020000;
+}
+
+.latest-news .left-unit {
+  width: calc(100% - 400px);
+  display: block;
+}
+
+.latest-news .news-item {
+  height: 410px;
+}
+
+.latest-news .news-item.item-1 {
+  float: left;
+  width: calc(60% - 10px);
+}
+
+.latest-news .news-item.item-2,
+.latest-news .news-item.item-3 {
+  width: calc(40% - 10px);
+  height: 200px;
+}
+
+.latest-news .ads__aside {
+  width: 400px;
+  height: 410px;
+  background-color: grey;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.latest-news .ads__aside h1 {
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+/*
+* 6.3 - Latest News-END
+*/
+
+/*
+* 6.4 - News Current Geo
+*/
+.slider__current-geo .news-item {
+  width: 390px;
+  height: 200px;
+  margin-bottom: 0;
+}
+
+.slider__current-geo .news-item .news-item__tag {
+  display: none;
+}
+
+.slider__current-geo .slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider__current-geo .slider-container::before,
+.slider__current-geo .slider-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25px;
+}
+
+.slider__current-geo .slider-container::before {
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 1)), color-stop(50%, rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.1)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#1a000000', GradientType=1);
+}
+
+.slider__current-geo .slider-container::after {
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.09) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.99) 98%, rgba(0, 0, 0, 1) 99%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.09)), color-stop(50%, rgba(0, 0, 0, 0.6)), color-stop(98%, rgba(0, 0, 0, 0.99)), color-stop(99%, rgba(0, 0, 0, 1)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.09) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.99) 98%, rgba(0, 0, 0, 1) 99%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.09) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.99) 98%, rgba(0, 0, 0, 1) 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#17000000', endColorstr='#000000', GradientType=1);
+}
+
+.slider__current-geo .slider-container::before {
+  left: 0;
+  z-index: 1;
+}
+
+.slider__current-geo .slider-container::after {
+  right: 0;
+}
+
+.slider__current-geo .slick-list {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slider__current-geo .news-item .news-item__title {
+  white-space: normal;
+}
+
+.slider__current-geo .slick-prev,
+.slider__current-geo .slick-next {
+  position: absolute;
+  background-color: #d73e44;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: normal;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+  z-index: 1;
+}
+
+.slider__current-geo .slick-prev {
+  left: -10px;
+  text-align: right;
+}
+
+.slider__current-geo .slick-next {
+  right: -10px;
+  text-align: left;
+}
+
+/*
+* 6.4 - News Current Geo-END
+*/
+
+/*
+* 6.5 - Featured News
+*/
+.featured-news {}
+
+.featured-news .featured-container,
+.featured-news .top-stories-container {
+  border-top: 3px solid #020000;
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+.featured-news .featured-container {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  margin-right: 30px
+}
+
+.featured-news .featured-container .news-item,
+.featured-news .top-stories-container {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.featured-news .featured-container .news-item {
+  height: 400px;
+}
+
+.featured-news .featured-container .news-item:nth-child(even) {
+  margin-right: 0;
+}
+
+/*
+* 6.5 - Featured News-END
+*/
+
+
+/*
+* 6.6 - Top Stories
+*/
+.featured-news .top-stories-container ol * {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-weight: bold;
+}
+
+.featured-news .top-stories-container ol {
+  list-style: none;
+  counter-reset: top-stories-counter;
+  border-left: 1px solid #020000;
+}
+
+.featured-news .top-stories-container ol li {
+  counter-increment: top-stories-counter;
+  margin-bottom: 10px;
+  border: 1px solid #c8c8c8;
+  border-right: 0;
+  border-left: 0;
+  padding: 10px;
+}
+
+.featured-news .top-stories-container ol li:last-child {
+  margin-bottom: 0;
+}
+
+.featured-news .top-stories-container ol li::before {
+  content: counter(top-stories-counter);
+  background: #d73e44;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 2rem;
+  color: #ffffff;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 0.5rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/*
+* 6.6 - Top Stories-END
+*/
+footer {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 15px 0;
+  margin-top: 100px;
+  background-color: #0072bb;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+/*
+* 7.0 - Animations
+*/
+a,
+a:hover {
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+/*
+* 7.0 - Animations-END
+*/
